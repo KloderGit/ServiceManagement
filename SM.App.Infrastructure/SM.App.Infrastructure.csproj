@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1CServiceLibrary\1CServiceLibrary\ServiceLibrary1C.csproj" />
+    <ProjectReference Include="..\SM.App.Service\SM.App.Service.csproj" />
+    <ProjectReference Include="..\SM.Common\SM.App.Common.csproj" />
+    <ProjectReference Include="..\SM.Domain.Interfaces\SM.Domain.Service.csproj" />
+  </ItemGroup>
+
+</Project>
