@@ -1,5 +1,6 @@
 ﻿using SM.App.Common.Mapster;
 using SM.App.Infrastructure.DomainService;
+using SM.App.Service.Interfaces;
 using System;
 
 namespace xSandBox
@@ -12,9 +13,11 @@ namespace xSandBox
 
             Console.WriteLine("Hello World!");
 
-            var ttt = new DataManager1C();
+            IDataManager1C ttt = new DataManager1C();
 
-            var mmm = ttt.Programs.GetList();
+            var mmm = ttt.Attestations.GetList();
+
+            var mmmv = ttt.Programs.GetList();
         }
     }
 }

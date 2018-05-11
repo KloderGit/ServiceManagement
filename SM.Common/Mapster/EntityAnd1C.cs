@@ -13,8 +13,13 @@ namespace SM.App.Common.Mapster
                 .Map(dest => dest.Title, src => src.name)
                 .Map(dest => dest.Active, src => src.active == "Активный" ? true : false)
                 .Map(dest => dest.Accepted, src => src.acceptDate)
-                .Map(dest => dest.Type, src => src.typeProgram)
-                .Map(dest => dest.Class, src => src.viewProgram);
+                .Map(dest => dest.Variety, src => src.typeProgram)
+                .Map(dest => dest.Type, src => src.viewProgram);
+
+
+            config.NewConfig<ФормаКонтроля, SM.Domain.Core.Models.Attestation>()
+                .Map(dest => dest.Guid, src => src.ГУИД)
+                .Map(dest => dest.Title, src => src.Наименование);
         }
     }
 }

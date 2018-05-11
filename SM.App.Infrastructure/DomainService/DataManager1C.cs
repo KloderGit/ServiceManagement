@@ -1,21 +1,24 @@
-﻿using SM.App.Infrastructure.AppService.C1;
+﻿
+using SM.App.Infrastructure.AppService.C1;
 using SM.App.Service.Interfaces;
 using SM.App.Service.Interfaces.C1;
 
 namespace SM.App.Infrastructure.DomainService
 {
-    public class DataManager1C : IDataManager1C
+    public class DataManager1C : Service.Interfaces.IDataManager1C
     {
-        _1CServiceLibrary.UnitOfWork dataManager;
+        ServiceLibrary1C.Interfaces.IDataManager dataManager;
 
         public DataManager1C()
         {
-            dataManager = new _1CServiceLibrary.UnitOfWork();
+            dataManager = new ServiceLibrary1C.UnitOfWork();
         }
 
-        IProgram1C EducationPrograms;
+        Service.Interfaces.C1.IProgram1C EducationPrograms;
+        Service.Interfaces.C1.IAttestation1C EduAttestations;
 
-        public IProgram1C Programs => EducationPrograms ?? (EducationPrograms = new Program1CImplement(dataManager.Programs));
+        public Service.Interfaces.C1.IProgram1C Programs => EducationPrograms ?? (EducationPrograms = new AppService.C1.Program1CImplement(dataManager.Programs));
 
+        public Service.Interfaces.C1.IAttestation1C Attestations => EduAttestations ?? (EduAttestations = new AppService.C1.Attestation1CImplement(dataManager.Attestations));
     }
 }
