@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\1CServiceLibrary\1CServiceLibrary\ServiceLibrary1C.csproj" />
     <ProjectReference Include="..\SM.App.Infrastructure\SM.App.Infrastructure.csproj" />
     <ProjectReference Include="..\SM.Common\SM.App.Common.csproj" />
   </ItemGroup>

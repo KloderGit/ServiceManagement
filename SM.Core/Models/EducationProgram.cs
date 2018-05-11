@@ -9,24 +9,39 @@ namespace SM.Domain.Core.Models
         public string Guid { get; set; }
 
         /// <summary>
+        /// Активность
+        /// </summary>
+        public bool Active { get; set; }
+
+        /// <summary>
         /// Название программы
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// Тип программы - Обучение / Стажировка
-        /// </summary>
-        public string Variety { get; set; }
-
-        /// <summary>
-        /// Вид проведения - Курс / Семинар
+        /// Тип - Обучение / Стажировка
         /// </summary>
         public string Type { get; set; }
 
         /// <summary>
-        /// Активность
+        /// Вид проведения - Курс / Семинар
         /// </summary>
-        public bool Active { get; set; }
+        public string Variant { get; set; }
+
+        /// <summary>
+        /// Форма проведения - Очно / Дистанционно
+        /// </summary>
+        public EducationForm EducationForm { get; set; }
+
+        /// <summary>
+        /// Название Направления обучения - УЦ / ШУ
+        /// </summary>
+        public Department Department { get; set; }
+
+        /// <summary>
+        /// Название Направления обучения - УЦ / ШУ
+        /// </summary>
+        public IEnumerable<Subject> Subjects { get; set; }
 
         /// <summary>
         /// Дата утверждения
